@@ -8,11 +8,11 @@ const Delete = () => {
     const handleDelete = async () => {
         try {
             await axios.delete(`http://localhost:3000/products/${id}`);
-            alert('Product deleted successfully!');
+            alert('Deleted successfully!');
             
             setTimeout(() => {
-                window.location = 'http://localhost:3001/Home';
-            }, 500);
+                window.location = 'http://localhost:3001';
+            }, 100);
         } catch (error) {
             console.log('Error deleting product:', error);
         }

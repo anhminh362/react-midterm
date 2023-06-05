@@ -42,8 +42,8 @@ const Edit = () => {
             alert('Product edited successfully!');
 
             setTimeout(() => {
-                window.location = 'http://localhost:3001/Home';
-            }, 1000);
+                window.location = 'http://localhost:3001';
+            }, 100);
         } catch (error) {
             console.log('Error adding product:', error);
         }
@@ -77,7 +77,7 @@ const Edit = () => {
                     Price:
                     <input
                         className="form-control" id="price" 
-                        type="text"
+                        type="number"
                         name="price"
                         value={product.price}
                         onChange={handleInputChange}
@@ -137,7 +137,7 @@ const Edit = () => {
                     Expiry Date:
                     <input
                         className="form-control" id="expiry_date" 
-                        type="text"
+                        type="date"
                         name="expiry_date"
                         value={product.expiry_date}
                         onChange={handleInputChange}
@@ -168,7 +168,7 @@ const Edit = () => {
                     />
                 </label>
                 </div>
-                <button type="submit">Save</button>
+                <button type="submit" className="btn btn-primary">Save</button>
             </form>
         </div>
     );

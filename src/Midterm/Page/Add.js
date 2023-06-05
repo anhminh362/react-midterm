@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-var jsonObject = 'http://localhost:3000/products';
-var keyCount = Object.keys(jsonObject).length;
+var Objects = 'http://localhost:3000/products';
+var Count = Object.keys(Objects).length;
 
 const Add = () => {
     const [newProduct, setNewProduct] = useState({
@@ -57,12 +57,12 @@ const Add = () => {
                 origin: '',
                 description: '',
                 tinhtranghang: true,
-                id: keyCount + 1,
+                id: Count + 1,
             });
 
             alert('Product added successfully!');
             setTimeout(() => {
-                window.location = 'http://localhost:3001/Home';
+                window.location = 'http://localhost:3001';
             }, 100);
         } catch (error) {
             alert('Error adding product:', error);
@@ -90,7 +90,7 @@ const Add = () => {
                     Price:
                     <input
                         className="form-control" id="price" 
-                        type="text"
+                        type="number"
                         name="price"
                         value={newProduct.price}
                         onChange={handleInputChange}
@@ -150,7 +150,7 @@ const Add = () => {
                     Expiry Date:
                     <input
                         className="form-control" id="expiry_date" 
-                        type="text"
+                        type="date"
                         name="expiry_date"
                         value={newProduct.expiry_date}
                         onChange={handleInputChange}
